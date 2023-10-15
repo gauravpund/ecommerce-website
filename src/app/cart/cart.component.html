@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="row mb-3 mt-3" *ngFor="let row of cartProducts">
+        <div class="col-md-2 col-3">
+            <img [src]="row.product_img" width="100%">
+        </div>
+        <div class="col-md-10 col-9">
+            <h3 class=" d-inline-block">{{row.product_name}}</h3>
+            <button class="btn btn-dark float-right" (click)="removeQty(row.product_econ_cart_id)">Remove Cart Qty</button>
+
+            <h5>{{row.price | currency:'INR'}}</h5>
+            <div>
+               <button class="btn btn-dark" (click)="decQty(row.product_econ_cart_id)">-</button>
+                <input type="text" disabled class="d-inline-block form-control text-center w-25 " [value]="row.qty">
+                <button class="btn btn-dark" (click)="incQty(row.product_econ_cart_id)">+</button>
+            
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center ">
+          <h1>
+            {{total | currency:'INR'}}
+          </h1>
+          <button class="btn btn-dark" routerLink="/placeorder">Confirm & Place Order</button>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

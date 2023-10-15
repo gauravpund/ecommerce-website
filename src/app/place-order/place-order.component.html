@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<br><br>
+<form #addressForm="ngForm" (ngSubmit)="saveAddress(addressForm)">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="border shadow p-3">
+                    <h1>Confirm Address</h1>
+                    <span>Enter Your Area</span>
+                    <input type="text" name="area" ngModel class="form-control mb-3">
+                    <span>Enter Your City</span>
+                    <input type="text" name="city" ngModel class="form-control mb-3">
+                    <span>Enter Your District</span>
+                    <input type="text" name="district" ngModel class="form-control mb-3">
+                    <span>Enter Your State</span>
+                    <input type="text" name="state" ngModel class="form-control mb-3">
+                    <span>Enter Your Country</span>
+                    <input type="text" name="country" ngModel="India" class="form-control mb-3">
+                    <span>Enter Your Pincode</span>
+                    <input type="text" name="pincode" ngModel class="form-control mb-3">
+                    
+                    <input type="hidden" name="payment_type" ngModel="COD" class="form-control mb-3">
+                    <div class="text-right">
+                        <button class="btn btn-dark">Place Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<app-footer></app-footer>
